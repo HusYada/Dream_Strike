@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: 3eb6c6a0131175140b5bea54e4a2df45
+timeCreated: 1516819906
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Gill Sans MT Ext Condensed Bold
+  fontNames:
+  - Gill Sans MT Ext Condensed Bold
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
