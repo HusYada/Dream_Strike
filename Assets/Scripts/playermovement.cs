@@ -8,13 +8,16 @@ public class playermovement : MonoBehaviour {
 
 	public player plyr;					// A script variable to access variables from the player script
 	public abtscreen abt;				// A script variable to access variables from the abtscreen script
+	public float slope = 0;				// ---
 	public bool canwalkleft = true;		// Checks if the player can walk left
 	public bool canwalkright = true;	// Checks if the player can walk right
+	private Rigidbody2D rb;
 	private Animator anim;				// The animator for the player
 
 	void Start () {
 
 		// Getting the components
+		rb   = this.GetComponent<Rigidbody2D>();
 		anim = this.GetComponent<Animator>();
 	}
 
@@ -50,7 +53,7 @@ public class playermovement : MonoBehaviour {
 
 			// If the "Walk Right" ability is equipped, then the player can perform the action
 			if(abt.eqpdwalkright == true && canwalkright == true) {
-				transform.Translate (new Vector3 (0.5f, 0.0f, 0.0f) * plyr.speed * Time.deltaTime);
+				transform.Translate (new Vector3 (0.5f, slope, 0.0f) * plyr.speed * Time.deltaTime);
 				plyr.idle = false;
 
 				if (plyr.grounded == true){
@@ -63,6 +66,10 @@ public class playermovement : MonoBehaviour {
 
 			// If the player is not moving left or right, then the player is idle
 		} else { 
+			plyr.idle = true;
+		}
+
+		if(Input.GetKeyUp("left") || hmove < -0.1f || Input.GetKeyUp("right")){
 			plyr.idle = true;
 		}
 	}
